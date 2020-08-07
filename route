@@ -1,0 +1,19 @@
+//Eloquent query:
+
+Users::with('posts')->get();
+
+models and relationships:
+
+//In User model:
+
+protected $with="comments"; //it is important
+
+public function posts() {
+    $this->hasMany('App\Post');
+}
+
+//In Post Model:
+
+public function comments() {
+    $this->hasMany('App\Comments');
+}
